@@ -1,0 +1,29 @@
+Reason : Didn't want to keep typing my Github username and password whenever im trying 
+         to pull / push something from git in my raspberry pi. 
+         
+cd ~/.ssh/
+
+* If there are any other rsa keys present move them into a different directory
+
+* generate a new key
+
+ssh-keygen -t rsa -b 4096 -C "youremail@address.com"
+
+* Give the file a name 
+
+id_rsa
+
+* When Propmpted to enter a paraprhase enter something you will remember 
+( if you enter the pharaphase when you are doing a git command ie git pull, 
+it will ask for the pharaphrase before completing the task.)
+
+* Open the .pub file to get the public key 
+
+cat id_rsa.pub
+
+* copy the contents of the file. and create a new SSH key in the github under 'SSH an GPG keys'
+
+* to test your connection 
+
+ssh -T git@github.com
+
